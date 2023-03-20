@@ -5,8 +5,7 @@ import Slidecard from "./components/Slidecard.jsx";
 const App = () => {
   return (
     <div>
-      {/* <Homepage /> */}
-      <Slidecard />
+      <Homepage />
     </div>
   );
 };

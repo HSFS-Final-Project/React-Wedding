@@ -4,7 +4,6 @@ import ReviewUserData from "./ReviewUserData";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Navbar from "./Navbar";
 
 const Slidecard = () => {
   let settings = {
@@ -43,7 +42,6 @@ const Slidecard = () => {
   };
   return (
     <>
-      <Navbar />
       <div className="flex flex-col my-36 justify-center w-full px-[10%] gap-2">
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-3xl font-extrabold text-gray-700">Portofolio</h1>

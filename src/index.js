@@ -9,11 +9,16 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import Portofolio from "./pages/Portofolio";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/portofolio",
+    element: <Portofolio />,
   },
 ]);
 
