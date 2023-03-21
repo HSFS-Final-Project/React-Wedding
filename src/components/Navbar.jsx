@@ -28,12 +28,7 @@ const Navbar = () => {
           </div>
           <div className="hidden lg:flex flex-row space-x-5">
             <Link to="/signuppage" className="text-xl text-smallTextColor font-semibold p-3 px-6 pt-2">Daftar</Link>
-            <a
-              href="#"
-              className="text-xl text-white p-3 px-6 pt-2 bg-buttonColor rounded-lg baseline hover:bg-gray md:block"
-            >
-              Masuk
-            </a>
+            <Link to="/signinpage" className="text-xl text-white p-3 px-6 pt-2 bg-buttonColor rounded-lg baseline hover:bg-gray md:block">Masuk</Link>
           </div>
         </div>
       </nav>

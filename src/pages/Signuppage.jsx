@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import "./Signuppage.css"
 
@@ -80,7 +81,7 @@ const Signuppage = () => {
                       <button type="button" href="#" class="bg-buttonColor p-2 rounded-full w-full block self-center my-4 text-white text-center hover:scale-110 duration-200 shadow-lg" onClick={handleClick}>Buat Sekarang</button>
                       <button type="button" href="#" class="border-buttonColor border-2 p-2 rounded-full w-full block self-center my-4 text-buttonColor text-center hover:scale-110 duration-200 shadow-lg">Daftar dengan Google</button>
                       <div>
-                        Sudah ada akun?<span><a href="/src/login-page.html" class="text-buttonColor"> login disini</a></span>
+                        Sudah ada akun?<span><Link to="/signinpage" class="text-buttonColor"> log in disini.</Link></span>
                       </div>
                     </div>  
                   </div>
