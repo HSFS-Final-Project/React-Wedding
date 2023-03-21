@@ -10,6 +10,7 @@ import {
   Link,
 } from "react-router-dom";
 import Portofolio from "./pages/Portofolio";
+import Signuppage from "./pages/Signuppage";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/portofolio",
     element: <Portofolio />,
+  },
+  {
+    path: "/signuppage",
+    element: <Signuppage />,
   },
 ]);
 

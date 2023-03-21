@@ -27,12 +27,7 @@ const Navbar = () => {
             </a>
           </div>
           <div className="hidden lg:flex flex-row space-x-5">
-            <a
-              href="/src/form-page.html"
-              className="text-xl text-smallTextColor font-semibold p-3 px-6 pt-2"
-            >
-              Daftar
-            </a>
+            <Link to="/signuppage" className="text-xl text-smallTextColor font-semibold p-3 px-6 pt-2">Daftar</Link>
             <a
               href="#"
               className="text-xl text-white p-3 px-6 pt-2 bg-buttonColor rounded-lg baseline hover:bg-gray md:block"
