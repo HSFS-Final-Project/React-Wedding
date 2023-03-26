@@ -42,7 +42,7 @@ const Slidecard = () => {
   };
   return (
     <>
-      <div className="flex flex-col my-36 justify-center w-full px-[10%] gap-2">
+      <div className="flex flex-col mt-36 mb-10 justify-center w-full px-[10%] gap-2">
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-3xl font-extrabold text-gray-700">Portofolio</h1>
           <p>
@@ -56,7 +56,7 @@ const Slidecard = () => {
         <Slider {...settings}>
           {ReviewUserData.map(({ id, img1, img2, review, tgl, Coment }) => (
             <div key={id}>
-              <div className="p-5 rounded-2xl h-56 shadow-md my-10 mx-1">
+              <div className="p-5 rounded-2xl h-56 shadow-md mx-1">
                 <div className="flex">
                   <img
                     className="w-8 rounded-[50%] border-2"
