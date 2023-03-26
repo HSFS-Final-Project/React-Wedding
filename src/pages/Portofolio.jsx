@@ -1,4 +1,4 @@
-import { react } from "@babel/types";
+import React from "react";
 import Navbar from "../components/Navbar";
 import SelectFilter from "../components/SelectFilter";
 import Slidecard from "../components/Slidecard";

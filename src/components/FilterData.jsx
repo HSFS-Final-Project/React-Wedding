@@ -1,5 +1,3 @@
-import React from "react";
-
 const FilterData = [
   {
     id: 12,

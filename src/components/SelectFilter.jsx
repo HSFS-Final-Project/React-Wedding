@@ -1,9 +1,5 @@
-import React, { useEffect, useState } from "react";
-import Img from "../assets/FilterData/eka-andy.png";
-import Andy from "../assets/FilterData/andy.jpg";
-import Eka from "../assets/FilterData/eka.jpg";
+import React, { useState } from "react";
 import FilterData from "./FilterData";
-import { getValue } from "@testing-library/user-event/dist/utils";
 
 const SelectFilter = () => {
   const [dataFilter, Setdatafilter] = useState(FilterData);
@@ -21,7 +17,7 @@ const SelectFilter = () => {
   const [dataTerbaru, Setdataterbaru] = useState("terbaru");
   const [dataterpopuler, Setdataterpopuler] = useState("terpopuler");
 
-  const FilderShort = (catShort) => {
+  const FilterShort = (catShort) => {
     if (catShort === dataTerbaru && catShort !== dataterpopuler) {
       const updateFilter1 = FilterData.sort((a, b) => {
         return a.id - b.id;
@@ -58,7 +54,7 @@ const SelectFilter = () => {
           <h1>Urutkan</h1>
           <select
             className="w-full h-[35px] px-2 rounded-md"
-            onChange={(e) => FilderShort(e.target.value)}
+            onChange={(e) => FilterShort(e.target.value)}
           >
             <option value="terbaru">Terbaru</option>
             <option value="terpopuler">Terpopuler</option>
@@ -97,7 +93,7 @@ const SelectFilter = () => {
                 </div>
                 <div className="mt-10 flex flex-col justify-center items-center">
                   <p>{userName}</p>
-                  <p>{viewUser}</p>
+                  <p>{viewUser} Kali di Lihat</p>
                 </div>
               </div>
             )
