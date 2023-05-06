@@ -12,6 +12,7 @@ import {
 import Portofolio from "./pages/Portofolio";
 import Signuppage from "./pages/Signuppage";
 import Signinpage from "./pages/Signinpage";
+import Forgotpass from "./pages/Forgotpass";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
     path: "/signinpage",
     element: <Signinpage />,
   },
+  {
+    path: "/forgotpass",
+    element: <Forgotpass />,
+  }
 ]);
 
 // createRoot(document.getElementById("root")).render(

@@ -41,12 +41,12 @@ const Signinpage = () => {
                                     </div>
                     
                                     <div class="flex gap-2 my-2">
-                                        <p>Lupa password?</p>
+                                        <p>Lupa password?</p><span><Link to="/forgotpass" class="text-buttonColor">Klik disini</Link></span>
                                     </div>
                                     <button type="button" href="#" class="bg-buttonColor p-2 rounded-full w-full block self-center my-4 text-white text-center hover:scale-110 duration-200 shadow-lg" onClick={handleSubmit}>Masuk</button>
                                     <button type="button" href="#" class="border-buttonColor border-2 p-2 rounded-full w-full block self-center my-4 text-buttonColor text-center hover:scale-110 duration-200 shadow-lg">Masuk dengan Google</button>
-                                    <div>
-                                        Belum punya akun?<span><Link to="/signuppage" class="text-buttonColor"> Daftar disini</Link></span>
+                                    <div class="flex gap-2 my-2">
+                                        <p>Belum punya akun?</p><span><Link to="/signuppage" class="text-buttonColor">Daftar disini</Link></span>
                                     </div>
                                 </div>                            
                             </div>
