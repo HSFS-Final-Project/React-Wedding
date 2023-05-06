@@ -1,9 +1,11 @@
 import React from "react";
+import Homepage from "./pages/Homepage";
+import Slidecard from "./components/Slidecard.jsx";
 
 const App = () => {
   return (
     <div>
-      <h1 className="text-red-500">Bacot</h1>
+      <Homepage />
     </div>
   );
 };
