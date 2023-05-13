@@ -10,6 +10,9 @@ module.exports = {
         pinkBoldColor: "#f36b7f",
         buttonColor: "#f63854",
       },
+      fontFamily: {
+        dancing: ["Dancing Script", "sans-serif"],
+      },
     },
   },
   plugins: [],

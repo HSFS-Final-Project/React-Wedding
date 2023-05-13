@@ -13,6 +13,8 @@ import Portofolio from "./pages/Portofolio";
 import Signuppage from "./pages/Signuppage";
 import Signinpage from "./pages/Signinpage";
 import Forgotpass from "./pages/Forgotpass";
+import Invitation from "./pages/Theme";
+import Theme from "./pages/Theme";
 
 const router = createBrowserRouter([
   {
@@ -32,9 +34,13 @@ const router = createBrowserRouter([
     element: <Signinpage />,
   },
   {
+    path: "/invitation/:id",
+    element: <Theme />,
+  },
+  {
     path: "/forgotpass",
     element: <Forgotpass />,
-  }
+  },
 ]);
 
 // createRoot(document.getElementById("root")).render(
