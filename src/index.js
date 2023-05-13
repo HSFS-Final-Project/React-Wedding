@@ -14,6 +14,7 @@ import Signuppage from "./pages/Signuppage";
 import Signinpage from "./pages/Signinpage";
 import Forgotpass from "./pages/Forgotpass";
 import Dashboard from "./pages/Dashboard";
+// import Theme from "./pages/Theme";
 
 const router = createBrowserRouter([
   {

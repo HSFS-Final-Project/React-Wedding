@@ -105,6 +105,7 @@ const Dashboard = () => {
                       </form>
                       
                       <p className="text-lg font-bold my-2">Daftar Nama Turut Mengundang</p>
+                      <textarea className="w-full border" rows="" cols=""></textarea>
 
                       <p className="text-lg font-bold my-2">Galeri Foto</p>
                       <div>
