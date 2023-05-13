@@ -1,18 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import "./Formpage.css"
+import axios from "axios";
 
 const Signinpage = () => {
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
-    const [error,setError] = useState(false)
+    const [error,setError] = useState("")
 
-    const handleSubmit=(e)=> {
+    useEffect(() => {
+        setError("")
+    }, [email, password])
+
+    const handleSubmit= async (e)=> {
         e.preventDefault();
-        if(email.length == 0 || password.length == 0){
-          setError(true)
-        }        
+        try {
+            const login = await axios.post ("http://localhost:3030/login", {email: email, password: password});
+            
+        } catch (error) {
+            setError(error.response.data.message)
+        }
+        // if(email.length == 0 || password.length == 0){
+        //   setError(true)
+        // }        
     }
 
     return (
@@ -33,11 +44,13 @@ const Signinpage = () => {
                             
                                 <div class="mt-4">
                                     <p>Masukkan Email dan Password yang sudah terdaftar di Our Wedding</p>
+                                    <small className="text-buttonColor">{error}</small>
                                     <div class="block">
+
                                         <input type="email" placeholder="Alamat email" class="my-2 border-solid border-2 rounded-sm w-full" onChange={e=>setEmail(e.target.value)} />
-                                        {error?<small className="text-buttonColor" >Email harus diisi</small>:""}
+                                        
                                         <input type="password" placeholder="Password" class="my-2 border-solid border-2 rounded-sm w-full" onChange={e=>setPassword(e.target.value)} />
-                                        {error?<small className="text-buttonColor" >Password harus diisi</small>:""}
+                                        
                                     </div>
                     
                                     <div class="flex gap-2 my-2">
