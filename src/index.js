@@ -13,6 +13,7 @@ import Portofolio from "./pages/Portofolio";
 import Signuppage from "./pages/Signuppage";
 import Signinpage from "./pages/Signinpage";
 import Forgotpass from "./pages/Forgotpass";
+import Dashboard from "./pages/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: "/forgotpass",
     element: <Forgotpass />,
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />
   }
 ]);
 
