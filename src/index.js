@@ -14,7 +14,7 @@ import Signuppage from "./pages/Signuppage";
 import Signinpage from "./pages/Signinpage";
 import Forgotpass from "./pages/Forgotpass";
 import Dashboard from "./pages/Dashboard";
-// import Theme from "./pages/Theme";
+import Theme from "./pages/Theme";
 
 const router = createBrowserRouter([
   {
@@ -39,8 +39,12 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard />
-  }
+    element: <Dashboard />,
+  },
+  {
+    path: "/tema/:id",
+    element: <Theme />,
+  },
 ]);
 
 // createRoot(document.getElementById("root")).render(
