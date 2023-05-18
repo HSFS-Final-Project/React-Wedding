@@ -1,5 +1,8 @@
 import React from "react";
-const Sidebar = ({ setShow }) => {
+import { SidebarContext } from "../context/SidebarContext";
+const Sidebar = () => {
+  const { hendleNewInvitation, hendleMyInvitation, hendleMyProfile } =
+    React.useContext(SidebarContext);
   return (
     <div className="fixed left-0 top-0 h-screen lg:basis-1/5 bg-white text-black shadow-md ">
       <div className="w-full p-3 bg-orange-500 shadow-md ">
@@ -11,12 +14,22 @@ const Sidebar = ({ setShow }) => {
         <ul className="flex flex-col gap-3 font-semibold">
           <li
             className="hover:text-orange-500 cursor-pointer"
-            onClick={() => setShow(true)}
+            onClick={hendleNewInvitation}
           >
             New Invitation
           </li>
-          <li>My Invitation</li>
-          <li>My Profile</li>
+          <li
+            className="hover:text-orange-500 cursor-pointer"
+            onClick={hendleMyInvitation}
+          >
+            My Invitation
+          </li>
+          <li
+            className="hover:text-orange-500 cursor-pointer"
+            onClick={hendleMyProfile}
+          >
+            My Profile
+          </li>
         </ul>
       </div>
     </div>

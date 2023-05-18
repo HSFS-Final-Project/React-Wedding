@@ -1,174 +1,31 @@
 import { react } from "@babel/types";
 import React from "react";
+import Card from "./Card";
+import axios from "axios";
 
 const NewInvitation = () => {
-  const [addTwoEvent, setAddTwoEvent] = React.useState(false);
+  const [data, setData] = React.useState();
 
-  return (
-    <div className="ml-48">
-      <div className="text-2xl font-bold my-6">
-        Input <span className="text-orange-500">Data</span> Undangan
+  React.useEffect(() => {
+    getDataTheme();
+  }, []);
+
+  const getDataTheme = async () => {
+    const respons = await axios.get("http://localhost:3030/alltheme");
+    setData(respons.data.data);
+  };
+
+  if (data)
+    return (
+      <div className="border w-full flex flex-col items-center">
+        <dir>Filter</dir>
+        <div className="flex flex-wrap gap-5 items-center justify-center">
+          {data.map((item) => {
+            return <Card key={item.id} item={item} />;
+          })}
+        </div>
       </div>
-      <div className="mt-4">
-        <form>
-          <div>
-            <p className="text-lg font-bold my-2">Data Pengantin Pria</p>
-            <input
-              type="text"
-              placeholder="Nama"
-              className="my-2 border-b rounded-md w-full border-orange-500"
-            />
-            <input
-              type="text"
-              placeholder="Nama Panggilan"
-              className="my-2 border-b rounded-md w-full border-orange-500"
-            />
-            <input
-              type="text"
-              placeholder="Anak ke-"
-              className="my-2 border-b rounded-md w-full border-orange-500"
-            />
-            <input
-              type="text"
-              placeholder="Nama Ibu"
-              className="my-2 border-b rounded-md w-full border-orange-500"
-            />
-            <input
-              type="text"
-              placeholder="Nama Ayah"
-              className="my-2 border-b rounded-md w-full border-orange-500"
-            />
-          </div>
-
-          <div>
-            <p className="text-lg font-bold my-2">Data Pengantin Wanita</p>
-            <input
-              type="text"
-              placeholder="Nama"
-              className="my-2 border-b rounded-md w-full border-orange-500"
-            />
-            <input
-              type="text"
-              placeholder="Nama Panggilan"
-              className="my-2 border-b rounded-md w-full border-orange-500"
-            />
-            <input
-              type="text"
-              placeholder="Anak ke-"
-              className="my-2 border-b rounded-md w-full border-orange-500"
-            />
-            <input
-              type="text"
-              placeholder="Nama Ibu"
-              className="my-2 border-b rounded-md w-full border-orange-500"
-            />
-            <input
-              type="text"
-              placeholder="Nama Ayah"
-              className="my-2 border-b rounded-md w-full border-orange-500"
-            />
-          </div>
-
-          <div>
-            <p className="text-lg font-bold my-2">Data Acara 1</p>
-            <p>Nama Acara (Akad/Resepsi)</p>
-            <input
-              type="text"
-              className="my-2 border-solid border-2 rounded-sm w-full"
-            />
-
-            <p>Tanggal Acara</p>
-            <input
-              type="text"
-              className="my-2 border-solid border-2 rounded-sm w-full"
-            />
-
-            <p>Waktu</p>
-            <input
-              type="text"
-              className="my-2 border-solid border-2 rounded-sm w-full"
-            />
-
-            <p>Alamat</p>
-            <input
-              type="text"
-              className="my-2 border-solid border-2 rounded-sm w-full"
-            />
-
-            {addTwoEvent && (
-              <>
-                <p className="text-lg font-bold my-2">Data Acara 2</p>
-                <p>Nama Acara (Akad/Resepsi)</p>
-                <input
-                  type="text"
-                  className="my-2 border-solid border-2 rounded-sm w-full"
-                />
-
-                <p>Tanggal Acara</p>
-                <input
-                  type="text"
-                  className="my-2 border-solid border-2 rounded-sm w-full"
-                />
-
-                <p>Waktu</p>
-                <input
-                  type="text"
-                  className="my-2 border-solid border-2 rounded-sm w-full"
-                />
-
-                <p>Alamat</p>
-                <input
-                  type="text"
-                  className="my-2 border-solid border-2 rounded-sm w-full"
-                />
-              </>
-            )}
-
-            {!addTwoEvent && (
-              <button className="border" onClick={() => setAddTwoEvent(true)}>
-                Add Acara 2
-              </button>
-            )}
-
-            {addTwoEvent && (
-              <button className="border" onClick={() => setAddTwoEvent(false)}>
-                hidden Acara 2
-              </button>
-            )}
-          </div>
-
-          <div>
-            <p className="text-lg font-bold my-2">
-              Daftar Nama Turut Mengundang
-            </p>
-            <textarea className="w-full border" rows="" cols=""></textarea>
-
-            <p className="text-lg font-bold my-2">Galeri Foto</p>
-            <div>
-              <p className="my-2">Foto 1</p>
-              <input type="file" name="" value="" />
-              <p className="my-2">Foto 2</p>
-              <input type="file" name="" value="" />
-              <p className="my-2">Foto 3</p>
-              <input type="file" name="" value="" />
-              <p className="my-2">Foto 4</p>
-              <input type="file" name="" value="" />
-              <p className="my-2">Foto 5</p>
-              <input type="file" name="" value="" />
-            </div>
-          </div>
-
-          <button
-            type="submit"
-            href="#"
-            class="bg-buttonColor p-2 rounded-full w-full block self-center my-4 text-white text-center hover:scale-110 duration-200 shadow-lg"
-          >
-            Kirim Data
-          </button>
-        </form>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default NewInvitation;

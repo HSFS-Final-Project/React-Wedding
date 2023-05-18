@@ -14,14 +14,14 @@ const ContentInvitation = () => {
         <p>Minggu, 28 April 2024</p>
         <img
           className="w-20"
-          src={require("../../assets/1_u6dWj4ZvD52PlhguJO35nw.gif")}
+          src={require("../../../assets/1_u6dWj4ZvD52PlhguJO35nw.gif")}
           alt=""
         />
       </div>
       <div
         className="relative w-full h-[40vh] bg-cover bg-no-repeat"
         style={{
-          backgroundImage: `url(${require("../../assets/New_Project__21_.png")})`,
+          backgroundImage: `url(${require("../../../assets/New_Project__21_.png")})`,
           backgroundSize: "100%",
         }}
       >
@@ -130,7 +130,7 @@ const ContentInvitation = () => {
         }}
       >
         <p className="absolute top-20 font-dancing text-5xl text-yellow-800 font-extrabold">
-          Momment yang berharga
+          Turut Mengundang
         </p>
       </div>
       <div className="text-yellow-600 text-center px-10">
