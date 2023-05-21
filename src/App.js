@@ -8,6 +8,8 @@ import Forgotpass from "./pages/Forgotpass";
 import Dashboard from "./pages/Dashboard";
 import ErrorPage from "./components/ErrorPage";
 import Luxuri from "./pages/Theme/Luxuri";
+import { RequireAuth } from "react-auth-kit";
+import LuxuriViews from "./pages/Theme/LuxuriViews";
 
 // const router = createBrowserRouter([
 //   {
@@ -54,8 +56,16 @@ const App = () => {
         <Route path="/signuppage" element={<Signuppage />} />
         <Route path="/signinpage" element={<Signinpage />} />
         <Route path="/forgotpass" element={<Forgotpass />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/tema/luxuri" element={<Luxuri />} />
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth loginPath="/signinpage">
+              <Dashboard />
+            </RequireAuth>
+          }
+        />
+        <Route path="/tema/luxuri" element={<LuxuriViews />} />
+        <Route path="/invitation/:id" element={<Luxuri />} />
       </Routes>
     </BrowserRouter>
   );

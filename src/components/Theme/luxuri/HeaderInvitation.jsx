@@ -1,6 +1,6 @@
 import React from "react";
 
-const HeaderInvitation = () => {
+const HeaderInvitation = ({ nama_pria, nama_wanita }) => {
   return (
     <div className="fixed h-screen float-left w-[65%]">
       <img
@@ -9,8 +9,8 @@ const HeaderInvitation = () => {
         alt=""
       />
       <p className="mt-[550px] ml-20 font-dancing text-5xl text-white">
-        Design & <br />
-        Preset
+        {nama_pria} & <br />
+        {nama_wanita}
       </p>
     </div>
   );

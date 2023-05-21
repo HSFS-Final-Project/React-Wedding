@@ -16,6 +16,9 @@ import Forgotpass from "./pages/Forgotpass";
 import Dashboard from "./pages/Dashboard";
 import Sidebar from "./components/Sidebar";
 import SideProvider from "./context/SidebarContext";
+import { AuthProvider } from "react-auth-kit";
+import UserProvider from "./context/UserContext";
+import InvitationProvider from "./context/InvitationContext";
 
 // const router = createBrowserRouter([
 //   {
@@ -59,9 +62,19 @@ import SideProvider from "./context/SidebarContext";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <SideProvider>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <UserProvider>
+      <InvitationProvider>
+        <React.StrictMode>
+          <AuthProvider
+            authType={"cookie"}
+            authName={"_auth"}
+            cookieDomain={window.location.hostname}
+          >
+            <App />
+          </AuthProvider>
+        </React.StrictMode>
+      </InvitationProvider>
+    </UserProvider>
   </SideProvider>
 );
 

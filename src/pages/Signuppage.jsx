@@ -12,6 +12,8 @@ const Signuppage = () => {
   const [checkbox, setCheckbox] = useState(false);
   const [error, setError] = useState("");
 
+  const history = React.useState();
+
   React.useEffect(() => {
     setError("");
   }, [checkbox, email]);
@@ -28,7 +30,7 @@ const Signuppage = () => {
           password: password,
         });
 
-        console.log(passingData);
+        history("/signinpage");
       } catch (error) {
         setError(error.response.data.message);
       }
@@ -65,7 +67,7 @@ const Signuppage = () => {
               <div className="mt-4">
                 <p className="my-2">
                   Daftar akun terlebih dahulu untuk membuat undangan pernikahan
-                  digital mu{" "}
+                  digital mu
                 </p>
                 <small className="text-buttonColor">{error}</small>
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-const ContentInvitation = () => {
+const ContentInvitation = ({ data }) => {
   return (
     <div className="relative float-right w-[35%] bg-stone-200">
       <div
@@ -10,8 +10,10 @@ const ContentInvitation = () => {
         }}
       >
         <h1 className="text-lg">UNDANGAN PERNIKAHAN</h1>
-        <p className="font-dancing text-5xl">Design & Preset</p>
-        <p>Minggu, 28 April 2024</p>
+        <p className="font-dancing text-5xl text-center">
+          {data.m_nama} & {data.f_nama}
+        </p>
+        <p>Tanggal : {data.d_tanggal}</p>
         <img
           className="w-20"
           src={require("../../../assets/1_u6dWj4ZvD52PlhguJO35nw.gif")}
@@ -53,19 +55,18 @@ const ContentInvitation = () => {
           }}
         >
           <img
-            className="rounded-full w-52 mt-5 object-cover"
-            src="https://cdn-uploads.our-wedding.link/c67f5fb0-e7fa-11ed-8b3c-a52a58e30c2f.jpg"
+            className="rounded-full w-52 h-52 mt-5 object-cover"
+            src={`http://localhost:3030${data.m_img_profile}`}
             alt=""
           />
         </div>
         <div className="mt-5 flex flex-col items-center justify-center">
-          <p className="font-dancing text-yellow-900 text-4xl">
-            Maria Esanti, S.Pd
-          </p>
+          <p className="font-dancing text-yellow-900 text-4xl">{data.m_nama}</p>
+          <p className="text-yellow-600">Putra dari</p>
           <p className="text-yellow-600 text-lg">
-            Bapak Sanusi S.M & Ibu Jubaedah
+            {data.m_namaayah} & {data.m_namaibu}
           </p>
-          <p className="text-yellow-600 text-lg">dari London</p>
+          <p className="text-yellow-600 text-lg"></p>
         </div>
         <img
           src="https://images.ctfassets.net/q40z6pfqje6o/5N8eky35tTWbmdOZj3MCyo/0b6f57e181ae427e412ef2bc07044368/New_Project__14_.png"
@@ -94,19 +95,18 @@ const ContentInvitation = () => {
           }}
         >
           <img
-            className="rounded-full w-52 mt-5 object-cover"
-            src="https://cdn-uploads.our-wedding.link/c67f5fb0-e7fa-11ed-8b3c-a52a58e30c2f.jpg"
+            className="rounded-full w-52 h-52 mt-5 object-cover"
+            src={`http://localhost:3030${data.f_img_profile}`}
             alt=""
           />
         </div>
         <div className="mt-5 flex flex-col items-center justify-center">
-          <p className="font-dancing text-yellow-900 text-4xl">
-            Maria Esanti, S.Pd
-          </p>
+          <p className="font-dancing text-yellow-900 text-4xl">{data.f_nama}</p>
+          <p className="text-yellow-600">Putri dari</p>
           <p className="text-yellow-600 text-lg">
-            Bapak Sanusi S.M & Ibu Jubaedah
+            {data.f_namaayah} & {data.f_namaibu}
           </p>
-          <p className="text-yellow-600 text-lg">dari London</p>
+          <p className="text-yellow-600 text-lg"></p>
         </div>
         <img
           src="https://images.ctfassets.net/q40z6pfqje6o/5N8eky35tTWbmdOZj3MCyo/0b6f57e181ae427e412ef2bc07044368/New_Project__14_.png"
@@ -120,8 +120,35 @@ const ContentInvitation = () => {
         }}
       >
         <p className="absolute top-20 font-dancing text-5xl text-yellow-800 font-extrabold">
-          Our Love Story
+          Our Love Galery
         </p>
+      </div>
+      <div className="flex overflow-y-auto gap-2">
+        <img
+          className="w-40 h-40 rounded-full object-cover"
+          src={`http://localhost:3030${data.foto1}`}
+          alt=""
+        />
+        <img
+          className="w-40 h-40 rounded-full object-cover"
+          src={`http://localhost:3030${data.foto2}`}
+          alt=""
+        />
+        <img
+          className="w-40 h-40 rounded-full object-cover"
+          src={`http://localhost:3030${data.foto3}`}
+          alt=""
+        />
+        <img
+          className="w-40 h-40 rounded-full object-cover"
+          src={`http://localhost:3030${data.foto4}`}
+          alt=""
+        />
+        <img
+          className="w-40 h-40 rounded-full object-cover"
+          src={`http://localhost:3030${data.foto5}`}
+          alt=""
+        />
       </div>
       <div
         className="relative flex flex-col items-center w-full h-40 bg-cover"
@@ -134,8 +161,7 @@ const ContentInvitation = () => {
         </p>
       </div>
       <div className="text-yellow-600 text-center px-10">
-        "Menciptakan kenangan adalah hadiah yang tak ternilai harganya. Kenangan
-        akan bertahan seumur hidup; benda-benda hanya dalam waktu singkat."
+        {data.turut_mengundang}
       </div>
     </div>
   );
