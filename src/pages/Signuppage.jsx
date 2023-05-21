@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import "./Formpage.css";
 import axios from "axios";
@@ -12,7 +12,7 @@ const Signuppage = () => {
   const [checkbox, setCheckbox] = useState(false);
   const [error, setError] = useState("");
 
-  const history = React.useState();
+  const history = useNavigate();
 
   React.useEffect(() => {
     setError("");
